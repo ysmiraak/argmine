@@ -1,0 +1,395 @@
+#+TITLE: argumentation structures as heyting algebras
+#+DATE: october 31, 2018
+#+AUTHOR: kuan yu
+#+EMAIL: kuanyu@uni-postdam.de
+
+* an argumentation as
+
+** a category
+
+an argumentation structure can be described by a heyting algebra.
+we can start with the structure of a category.[fn:1]
+it consists of
+- a collection of objects \(p, q, r, \ldots\) which are sentences;
+- a collection of morphisms which describes the supporting relation;
+there is an arrow \(f : p \to q\) when \(p\) supports \(q\), such that
+- arrows can be composed:
+  whenever there are \(f : p \to q\) and \(g : q \to r\),
+  there is \(h = g \circ f : p \to r\);
+  namely that the supporting relation is transitive;
+- composition is associative: \((h \circ g) \circ f = h \circ (g \circ f)\);
+  namely that the supports can be given in any order;
+- for every object \(q\), there is an identity arrow \(id_{q} : q \to q\)
+  satisfying the unit laws \(id_{q} \circ f = f\) and \(g \circ id_{q} = g\);
+  namely that every sentence supports itself.
+
+** a preorder
+
+on top of that, it has the structure of a preorder.[fn:2]
+- there is at most one arrow from one object to another,
+  namely that \(p\) either supports \(q\) or it does not.
+we can alter this perspective if we wish,
+but it is convenient.
+
+** a lattice
+
+furthermore, it has the structure of a lattice.[fn:3]
+- for every two objects \(p\) and \(q\),
+  there are objects \(p \times q\) and \(p + q\),
+  which are their product and coproduct.
+  namely that we can always consider the conjunction and disjunction of two sentences;
+- there is an initial object \(0\) with an arrow to every other object;
+  it represents nonsense since it supports everything;
+- there is a terminal object \(1\) with an arrow from every other object;
+  it represents sensibility since we wish to make sense of all sentences.
+binary products with the terminal object gives us all finite product.
+the terminal object is in fact the nullary product,
+being the identity under product.
+"we must consider p and common sense" is just saying "we must consider p".
+likewise, the initial object is the nullary coproduct,
+being the identity under coproduct.
+"we must consider p or we might as well [something ridiculous]" is just saying "we must consider p".
+
+** a heyting algebra
+
+finally, we arrive at the structure of a heyting algebra.[fn:4]
+- for every two object \(p\) and \(q\),
+  there is an exponential object \(p \to q\), also written as \(q^{p}\),
+  representing the potential supporting connection,
+  which may not hold, but we can always consider it.
+
+** summary
+
+in summary, a heyting algebra is a bicartesian closed preorder.
+"bicartesian" refers to finite products and coproducts,
+and "closed" refers to exponentials.
+
+* examples
+
+we will consider the scheme by Peldszus and Stede (2013).[fn:6]
+and discuss how these structures can be expressed with the language defined above.
+
+** support
+
+| support          | \(p\) supports \(q\)                      | \(p \to q\)                    |
+| serial support   | \(p\) supports \(q\) which supports \(r\) | \((p \to q) \times (q \to r)\) |
+| linked support   | \(p\) supports \(r\) since \(q\)          | \((p \times q) \to r\)         |
+| multiple support | both \(p\) and \(q\) supports \(r\)       | \((p + q) \to r\)              |
+
+by the universal property of these constructions
+- multiple support \((p + q) \to r\) is equivalent to \((p \to r) \times (q \to r)\),
+  namely that they can be given in isolation;
+- linked support \((p \times q) \to r\) is equivalent to \(q \to (p \to r)\) as well as \(p \to (q \to r)\),
+  namely that \(q\) can be considered a warrent for \(p \to r\),
+  and \(p\) a warrent for \(q \to r\).
+
+** attack
+
+- \(r\) rebuts \(q\) can be expressed as \(r \to (q \to 0)\),
+  namely that \(r\) suggests that \(q\) is nonsensical;
+  the expression is equivalent to \((q \times r) \to 0\),
+  "you think \(q\) but consider \(r\), it is ridiculous";
+- \(r\) undercuts the argument that \(p\) supports \(q\) can be expressed as \(r \to ((p \to q) \to 0)\),
+  which is a case of rebuttal where \(q\) is replace with \(p \to q\),
+  namely a higher-order rebuttal;
+- the other types of attacks can be obtained by recursion, including counter-attacks;
+  for example rebutting a rebutter \((r \to (q \to 0)) \times (s \to (r \to 0))\)
+  "you think \(q\) is unreasonable because \(r\), but in fact \(r\) is unreasonable because \(s\)".
+
+* validating argumentation structures
+
+argumentation structures can be validated by the semantics of corresponding heyting algebras.
+
+** evaluation
+
+the =check= function takes an expression and constructs the truth-table for semantic evaluation.
+
+#+BEGIN_SRC clojure :eval no
+(defn check [expr env]
+  (cond (find env expr) (list env)
+        (symbol? expr)  (list (assoc env expr true) (assoc env expr false))
+        :else (let [[x op y] expr]
+                (for [env (check x env)
+                      env (check y env)]
+                  (assoc env expr
+                         (condp = op
+                           '-> (or (not (env x)) (env y))
+                           '* (and (env x) (env y))
+                           '+ (or (env x) (env y))))))))
+#+END_SRC
+
+using peirce's law as an example.
+
+#+BEGIN_SRC clojure :eval no
+(check '(((p -> q) -> p) -> p) {})
+=>
+({p true,  q true,  (p -> q) true,  ((p -> q) -> p) true,  (((p -> q) -> p) -> p) true}
+ {p true,  q false, (p -> q) false, ((p -> q) -> p) true,  (((p -> q) -> p) -> p) true}
+ {p false, q true,  (p -> q) true,  ((p -> q) -> p) false, (((p -> q) -> p) -> p) true}
+ {p false, q false, (p -> q) true,  ((p -> q) -> p) false, (((p -> q) -> p) -> p) true})
+#+END_SRC
+
+the checking mechanism is primitive.
+implication is defined in terms of disjunction and negation,
+which means that the logic it admits is non-constructive.
+it is in fact a checker for boolean algebra,
+and not heyting algebra.
+but it works fine in most cases.
+
+#+BEGIN_SRC clojure :eval no
+(defn lift [x] (fn [f] (f x)))
+
+(defn valid? [expr claim facts]
+  (as-> facts $
+    (zipmap $ (repeat true))
+    (assoc $ 0 false 1 true)
+    (check expr $)
+    (filter (lift expr) $)
+    (mapcat (partial check claim) $)
+    (some->> $ seq (every? (lift claim)))))
+
+(defmacro valid! [expr claim facts]
+  `(valid? '~expr '~claim '~facts))
+#+END_SRC
+
+the macro =valid!= is defined for the convenience of validating an argumentation structure.
+it takes an expression, the central claim, and collection of propositions which are taken as facts.
+in an argumentation graph, the central claim is the root node, and the facts are the leaf nodes.
+
+** examples
+
+*** support
+
+"\(p\) supports \(q\)."
+
+#+BEGIN_SRC clojure :eval no
+(valid! (p > q) q [p])
+=> true
+#+END_SRC
+
+the claim \(q\) is valid when \(p\) is taken as fact,
+
+*** serial support
+
+"\(p\) supports \(q\), and \(q\) supports \(r\)."
+
+#+BEGIN_SRC clojure :eval no
+(valid! ((p -> q) * (q -> r)) r [p])
+=> true
+#+END_SRC
+
+only \(p\) is the leaf node for the claim \(r\).
+
+*** linked support
+
+"\(p\) and \(q\) together supports \(r\)."
+
+#+BEGIN_SRC clojure :eval no
+(valid! ((p * q) -> r) r [p])
+=> false
+
+(valid! ((p * q) -> r) r [p q])
+=> true
+#+END_SRC
+
+both \(p\) and \(q\) must be taken as facts
+for the claim \(r\) to hold.
+
+*** multiple support
+
+"both \(p\) and \(q\) supports \(r\)."
+
+#+BEGIN_SRC clojure :eval no
+(valid! ((p + q) -> r) r [p q])
+=> true
+
+(valid! ((p + q) -> r) r [p])
+=> true
+
+(valid! ((p + q) -> r) r [q])
+=> true
+#+END_SRC
+
+then either \(p\) or \(q\) is sufficient.
+
+*** counter
+
+"\(q\) is bad, since \(r\)."
+
+#+BEGIN_SRC clojure :eval no
+(valid! (r -> (q -> 0)) q [r])
+=> false
+#+END_SRC
+
+there is nothing to support the claim \(q\).
+
+*** undercut
+
+"\(p\) does not support \(q\), since \(r\)."
+
+#+BEGIN_SRC clojure :eval no
+(valid! (r -> ((p -> q) -> 0)) q [r p])
+=> false
+#+END_SRC
+
+same as above.
+
+*** support and counter
+
+"\(q\) is good because \(p\), and it is bad because \(r\), therefore \(q\)."
+
+#+BEGIN_SRC clojure :eval no
+(valid! ((p -> q) * (r -> (q -> 0))) q [p r])
+=> nil
+#+END_SRC
+
+this would be an odd argumentation.
+it in fact holds logically, due to the principle of explosion.
+when contradictory premises are given, any claim would hold.
+however the implementation of the =valid?= function returns =nil=
+instead of =true= or =false= when there is no situation where the premises stand.
+
+*** rebut rebutter
+
+"\(q\) would be bad if \(r\), but \(r\) is wrong because \(s\)."
+
+#+BEGIN_SRC clojure :eval no
+(valid! ((r -> (q -> 0)) * (s -> (r -> 0))) q [s])
+=> false
+#+END_SRC
+
+the attacker got attacked but there is still nothing to support the claim.
+
+*** support and rebut rebutter
+
+"\(q\) is good because \(p\).
+it would be bad if \(r\), but \(r\) is wrong because \(s\)."
+
+#+BEGIN_SRC clojure :eval no
+(valid! ((p -> q) * ((r -> (q -> 0)) * (s -> (r -> 0)))) q [p s])
+=> true
+#+END_SRC
+
+when we add the support \(p\), the claim \(q\) becomes valid.
+
+*** support and undercut rebutter
+
+"\(q\) is good because \(p\).
+some say it is bad because \(r\), but not necessarily because \(s\)."
+
+#+BEGIN_SRC clojure :eval no
+(valid! ((p -> q) * (s -> ((r -> (q -> 0)) -> 0))) q [p r s])
+=> true
+#+END_SRC
+
+same as above.
+
+*** undercut rebutter
+
+"some say \(q\) is bad because \(r\), but not necessarily because \(s\)."
+
+#+BEGIN_SRC clojure :eval no
+(valid! (s -> ((r -> (q -> 0)) -> 0)) q [r s])
+=> true
+#+END_SRC
+
+this is a very odd case.
+the claim \(q\) holds due to the non-constructive nature of the logic checker:
+- \(s\) true (given as fact)
+- \((r \to (q \to 0)) \to 0\) true (by the undercut)
+- \(r \to (q \to 0)\) false (by negation)
+- \(q \to 0\) false (since \(r\) given)
+- \(q\) true (by the law of excluded middle)
+in a constructive setting, the final derivation does not hold, which is more desirable,
+since merely undercutting the rebutter is not supporting the claim.
+
+*** higher-order support
+
+"the argument that \(p\) supports \(q\), supports \(r\)."
+
+#+BEGIN_SRC clojure :eval no
+(valid! ((p -> q) -> r) r [p])
+=> false
+
+(valid! ((p -> q) -> r) r [(p -> q)])
+=> true
+#+END_SRC
+
+the claim \(r\) does not hold when only \(p\) is taken as fact.
+we need the exponential object \(p \to q\) as the leaf node.
+
+*** conjunctive support
+
+"\(p\) supports \(r\) and \(s\),
+and both \(r\) and \(s\) supports \(q\)."
+
+#+BEGIN_SRC clojure :eval no
+(valid! ((p -> (r * s)) * ((r * s) -> q)) q [p])
+=> true
+#+END_SRC
+
+the argumentation structure is no longer a tree but a graph.
+we could however make copies of the leaf node \(p\) to maintain the tree structure.
+
+*** disjunctive support
+
+"\(p\) suggests either \(r\) or \(s\),
+but in whichever case, \(q\)."
+
+#+BEGIN_SRC clojure :eval no
+(valid! ((p -> (r + s)) * ((r + s) -> q)) q [p])
+=> true
+#+END_SRC
+
+"\(p\) suggests either \(r\) or \(s\),
+but \(r\) cannot happen,
+therefore \(q\)."
+
+#+BEGIN_SRC clojure :eval no
+(valid! ((p -> (q + r)) * (r -> 0)) q [p])
+=> true
+#+END_SRC
+
+in the disjunctive case, the graph structure is difficult to eliminate.
+
+*** higher-order claim
+
+"\(q\) is reason for \(p\) because \(p\) makes \(q\) and we need \(q\)."
+
+#+BEGIN_SRC clojure :eval no
+(valid! (p -> q) (q -> p) [p])
+=> true
+#+END_SRC
+
+aristotle's telos.
+the claim itself is an exponential object.
+
+* ramblings
+
+we only need supporting arrows to describe argumentation structures.
+attacking arrows can be derived with the help of the initial object.
+but it is convenient to have two types of arrows,
+and these two descriptions are interchangeable anyways.
+
+we do need universal constructions (product, coproduct, exponential).
+it would be difficult to describe some higher-order constructions without them.
+although these constructions probably does not occur very often empirically.
+
+support is not just binary.
+if we wish to consider different types of supporting relations,
+then we have to break the preorder structure.
+instead of heyting algebras, we need heyting categories aka logoi.[fn:5]
+the terminal object does interesting things there.
+
+we have seen the usage of universal constructions,
+but what about functor and natural transformations and all the other stuff in category theory,
+and how might they help with argumentation mining.
+
+* Footnotes
+
+[fn:1] https://ncatlab.org/nlab/show/category
+[fn:2] https://ncatlab.org/nlab/show/preorder
+[fn:3] https://ncatlab.org/nlab/show/lattice
+[fn:4] https://ncatlab.org/nlab/show/Heyting+algebra
+[fn:5] https://ncatlab.org/nlab/show/Heyting+category
+[fn:6] https://dl.acm.org/citation.cfm?id=2603498
