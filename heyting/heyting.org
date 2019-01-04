@@ -66,7 +66,7 @@ and "closed" refers to exponentials.
 
 * examples
 
-we will consider the scheme by Peldszus and Stede (2013).[fn:6]
+we will consider the scheme by Peldszus and Stede (2013).[fn:5]
 and discuss how these structures can be expressed with the language defined above.
 
 ** support
@@ -378,8 +378,9 @@ although these constructions probably does not occur very often empirically.
 support is not just binary.
 if we wish to consider different types of supporting relations,
 then we have to break the preorder structure.
-instead of heyting algebras, we need heyting categories aka logoi.[fn:5]
-the terminal object does interesting things there.
+instead of heyting algebras, we need bicartesian closed categories.[fn:6]
+furthermore we may consider quantification of arguments,
+and work in heyting categories aka logoi and locally catesian closed categories.[fn:7][fn:8]
 
 we have seen the usage of universal constructions,
 but what about functor and natural transformations and all the other stuff in category theory,
@@ -391,5 +392,7 @@ and how might they help with argumentation mining.
 [fn:2] https://ncatlab.org/nlab/show/preorder
 [fn:3] https://ncatlab.org/nlab/show/lattice
 [fn:4] https://ncatlab.org/nlab/show/Heyting+algebra
-[fn:5] https://ncatlab.org/nlab/show/Heyting+category
-[fn:6] https://dl.acm.org/citation.cfm?id=2603498
+[fn:5] https://dl.acm.org/citation.cfm?id=2603498
+[fn:6] https://ncatlab.org/nlab/show/bicartesian+closed+category
+[fn:7] https://ncatlab.org/nlab/show/Heyting+category
+[fn:8] https://ncatlab.org/nlab/show/locally+cartesian+closed+category

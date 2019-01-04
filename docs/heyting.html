@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-11-01 Thu 05:29 -->
+<!-- 2019-01-04 Fri 05:12 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>argumentation structures as heyting algebras</title>
@@ -256,56 +256,56 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgaa33faf">1. an argumentation as</a>
+<li><a href="#org1dd44f6">1. an argumentation as</a>
 <ul>
-<li><a href="#orge59fc8b">1.1. a category</a></li>
-<li><a href="#org2b37d0b">1.2. a preorder</a></li>
-<li><a href="#orge9c0c86">1.3. a lattice</a></li>
-<li><a href="#orgc4af216">1.4. a heyting algebra</a></li>
-<li><a href="#orgb3fc351">1.5. summary</a></li>
+<li><a href="#org4307ad7">1.1. a category</a></li>
+<li><a href="#orgc6b258d">1.2. a preorder</a></li>
+<li><a href="#orga02a7f0">1.3. a lattice</a></li>
+<li><a href="#org240069b">1.4. a heyting algebra</a></li>
+<li><a href="#org03c8f43">1.5. summary</a></li>
 </ul>
 </li>
-<li><a href="#org9847566">2. examples</a>
+<li><a href="#orgf4c0a4b">2. examples</a>
 <ul>
-<li><a href="#orgd043fa9">2.1. support</a></li>
-<li><a href="#org5bd84d6">2.2. attack</a></li>
+<li><a href="#org058030c">2.1. support</a></li>
+<li><a href="#orga276c6e">2.2. attack</a></li>
 </ul>
 </li>
-<li><a href="#org2baa15c">3. validating argumentation structures</a>
+<li><a href="#orgd1a1c32">3. validating argumentation structures</a>
 <ul>
-<li><a href="#org4598f4c">3.1. evaluation</a></li>
-<li><a href="#org9166638">3.2. examples</a>
+<li><a href="#orge41da4b">3.1. evaluation</a></li>
+<li><a href="#org07258f4">3.2. examples</a>
 <ul>
-<li><a href="#orgbec2074">3.2.1. support</a></li>
-<li><a href="#orgb052222">3.2.2. serial support</a></li>
-<li><a href="#orga625f78">3.2.3. linked support</a></li>
-<li><a href="#org7e34358">3.2.4. multiple support</a></li>
-<li><a href="#orged2e335">3.2.5. counter</a></li>
-<li><a href="#orgbfa8fa6">3.2.6. undercut</a></li>
-<li><a href="#org09bfe2b">3.2.7. support and counter</a></li>
-<li><a href="#org143b8b7">3.2.8. rebut rebutter</a></li>
-<li><a href="#orgead9929">3.2.9. support and rebut rebutter</a></li>
-<li><a href="#org44d8cff">3.2.10. support and undercut rebutter</a></li>
-<li><a href="#orge5ae194">3.2.11. undercut rebutter</a></li>
-<li><a href="#org6eb3f7c">3.2.12. higher-order support</a></li>
-<li><a href="#org40532f1">3.2.13. conjunctive support</a></li>
-<li><a href="#org43c2fed">3.2.14. disjunctive support</a></li>
-<li><a href="#org4e50081">3.2.15. higher-order claim</a></li>
+<li><a href="#org2221748">3.2.1. support</a></li>
+<li><a href="#org6e7a6d6">3.2.2. serial support</a></li>
+<li><a href="#orgc0be8f0">3.2.3. linked support</a></li>
+<li><a href="#orgc7edd27">3.2.4. multiple support</a></li>
+<li><a href="#org7505f8c">3.2.5. counter</a></li>
+<li><a href="#org3dd901c">3.2.6. undercut</a></li>
+<li><a href="#orgbf2103f">3.2.7. support and counter</a></li>
+<li><a href="#orga72e4ea">3.2.8. rebut rebutter</a></li>
+<li><a href="#org1fad07b">3.2.9. support and rebut rebutter</a></li>
+<li><a href="#orgbba91cb">3.2.10. support and undercut rebutter</a></li>
+<li><a href="#org73c4287">3.2.11. undercut rebutter</a></li>
+<li><a href="#orgd366f5b">3.2.12. higher-order support</a></li>
+<li><a href="#orgc1789d2">3.2.13. conjunctive support</a></li>
+<li><a href="#org540bc0a">3.2.14. disjunctive support</a></li>
+<li><a href="#org2040816">3.2.15. higher-order claim</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org48bf2b7">4. ramblings</a></li>
+<li><a href="#org1d4a989">4. ramblings</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgaa33faf" class="outline-2">
-<h2 id="orgaa33faf"><span class="section-number-2">1</span> an argumentation as</h2>
+<div id="outline-container-org1dd44f6" class="outline-2">
+<h2 id="org1dd44f6"><span class="section-number-2">1</span> an argumentation as</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orge59fc8b" class="outline-3">
-<h3 id="orge59fc8b"><span class="section-number-3">1.1</span> a category</h3>
+<div id="outline-container-org4307ad7" class="outline-3">
+<h3 id="org4307ad7"><span class="section-number-3">1.1</span> a category</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 an argumentation structure can be described by a heyting algebra.
@@ -333,8 +333,8 @@ namely that every sentence supports itself.</li>
 </div>
 </div>
 
-<div id="outline-container-org2b37d0b" class="outline-3">
-<h3 id="org2b37d0b"><span class="section-number-3">1.2</span> a preorder</h3>
+<div id="outline-container-orgc6b258d" class="outline-3">
+<h3 id="orgc6b258d"><span class="section-number-3">1.2</span> a preorder</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 on top of that, it has the structure of a preorder.<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>
@@ -350,8 +350,8 @@ but it is convenient.
 </div>
 </div>
 
-<div id="outline-container-orge9c0c86" class="outline-3">
-<h3 id="orge9c0c86"><span class="section-number-3">1.3</span> a lattice</h3>
+<div id="outline-container-orga02a7f0" class="outline-3">
+<h3 id="orga02a7f0"><span class="section-number-3">1.3</span> a lattice</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 furthermore, it has the structure of a lattice.<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup>
@@ -378,8 +378,8 @@ being the identity under coproduct.
 </div>
 </div>
 
-<div id="outline-container-orgc4af216" class="outline-3">
-<h3 id="orgc4af216"><span class="section-number-3">1.4</span> a heyting algebra</h3>
+<div id="outline-container-org240069b" class="outline-3">
+<h3 id="org240069b"><span class="section-number-3">1.4</span> a heyting algebra</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 finally, we arrive at the structure of a heyting algebra.<sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup>
@@ -393,8 +393,8 @@ which may not hold, but we can always consider it.</li>
 </div>
 </div>
 
-<div id="outline-container-orgb3fc351" class="outline-3">
-<h3 id="orgb3fc351"><span class="section-number-3">1.5</span> summary</h3>
+<div id="outline-container-org03c8f43" class="outline-3">
+<h3 id="org03c8f43"><span class="section-number-3">1.5</span> summary</h3>
 <div class="outline-text-3" id="text-1-5">
 <p>
 in summary, a heyting algebra is a bicartesian closed preorder.
@@ -405,8 +405,8 @@ and "closed" refers to exponentials.
 </div>
 </div>
 
-<div id="outline-container-org9847566" class="outline-2">
-<h2 id="org9847566"><span class="section-number-2">2</span> examples</h2>
+<div id="outline-container-orgf4c0a4b" class="outline-2">
+<h2 id="orgf4c0a4b"><span class="section-number-2">2</span> examples</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 we will consider the scheme by Peldszus and Stede (2013).<sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup>
@@ -414,8 +414,8 @@ and discuss how these structures can be expressed with the language defined abov
 </p>
 </div>
 
-<div id="outline-container-orgd043fa9" class="outline-3">
-<h3 id="orgd043fa9"><span class="section-number-3">2.1</span> support</h3>
+<div id="outline-container-org058030c" class="outline-3">
+<h3 id="org058030c"><span class="section-number-3">2.1</span> support</h3>
 <div class="outline-text-3" id="text-2-1">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -467,8 +467,8 @@ and \(p\) a warrent for \(q \to r\).</li>
 </div>
 </div>
 
-<div id="outline-container-org5bd84d6" class="outline-3">
-<h3 id="org5bd84d6"><span class="section-number-3">2.2</span> attack</h3>
+<div id="outline-container-orga276c6e" class="outline-3">
+<h3 id="orga276c6e"><span class="section-number-3">2.2</span> attack</h3>
 <div class="outline-text-3" id="text-2-2">
 <ul class="org-ul">
 <li>\(r\) rebuts \(q\) can be expressed as \(r \to (q \to 0)\),
@@ -486,33 +486,33 @@ for example rebutting a rebutter \((r \to (q \to 0)) \times (s \to (r \to 0))\)
 </div>
 </div>
 
-<div id="outline-container-org2baa15c" class="outline-2">
-<h2 id="org2baa15c"><span class="section-number-2">3</span> validating argumentation structures</h2>
+<div id="outline-container-orgd1a1c32" class="outline-2">
+<h2 id="orgd1a1c32"><span class="section-number-2">3</span> validating argumentation structures</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 argumentation structures can be validated by the semantics of corresponding heyting algebras.
 </p>
 </div>
 
-<div id="outline-container-org4598f4c" class="outline-3">
-<h3 id="org4598f4c"><span class="section-number-3">3.1</span> evaluation</h3>
+<div id="outline-container-orge41da4b" class="outline-3">
+<h3 id="orge41da4b"><span class="section-number-3">3.1</span> evaluation</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 the <code>check</code> function takes an expression and constructs the truth-table for semantic evaluation.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-clojure">(<span style="color: #a020f0;">defn</span> <span style="color: #0000ff;">check</span> [expr env]
-  (<span style="color: #a020f0;">cond</span> (find env expr) (list env)
-        (symbol? expr)  (list (assoc env expr <span style="color: #008b8b;">true</span>) (assoc env expr <span style="color: #008b8b;">false</span>))
-        <span style="color: #008b8b;">:else</span> (<span style="color: #a020f0;">let</span> [[x op y] expr]
-                (<span style="color: #a020f0;">for</span> [env (check x env)
-                      env (check y env)]
-                  (assoc env expr
-                         (<span style="color: #a020f0;">condp</span> = op
-                           '-&gt; (<span style="color: #a020f0;">or</span> (not (env x)) (env y))
-                           '* (<span style="color: #a020f0;">and</span> (env x) (env y))
-                           '+ (<span style="color: #a020f0;">or</span> (env x) (env y))))))))
+<pre class="src src-clojure"><span style="color: #DCDCCC;">(</span><span style="color: #F0DFAF; font-weight: bold;">defn</span> <span style="color: #93E0E3;">check</span> <span style="color: #BFEBBF;">[</span>expr env<span style="color: #BFEBBF;">]</span>
+  <span style="color: #BFEBBF;">(</span><span style="color: #F0DFAF; font-weight: bold;">cond</span> <span style="color: #D0BF8F;">(</span>find env expr<span style="color: #D0BF8F;">)</span> <span style="color: #D0BF8F;">(</span>list env<span style="color: #D0BF8F;">)</span>
+        <span style="color: #D0BF8F;">(</span>symbol? expr<span style="color: #D0BF8F;">)</span>  <span style="color: #D0BF8F;">(</span>list <span style="color: #93E0E3;">(</span>assoc env expr <span style="color: #BFEBBF;">true</span><span style="color: #93E0E3;">)</span> <span style="color: #93E0E3;">(</span>assoc env expr <span style="color: #BFEBBF;">false</span><span style="color: #93E0E3;">)</span><span style="color: #D0BF8F;">)</span>
+        <span style="color: #BFEBBF;">:else</span> <span style="color: #D0BF8F;">(</span><span style="color: #F0DFAF; font-weight: bold;">let</span> <span style="color: #93E0E3;">[</span><span style="color: #9FC59F;">[</span>x op y<span style="color: #9FC59F;">]</span> expr<span style="color: #93E0E3;">]</span>
+                <span style="color: #93E0E3;">(</span><span style="color: #F0DFAF; font-weight: bold;">for</span> <span style="color: #9FC59F;">[</span>env <span style="color: #94BFF3;">(</span>check x env<span style="color: #94BFF3;">)</span>
+                      env <span style="color: #94BFF3;">(</span>check y env<span style="color: #94BFF3;">)</span><span style="color: #9FC59F;">]</span>
+                  <span style="color: #9FC59F;">(</span>assoc env expr
+                         <span style="color: #94BFF3;">(</span><span style="color: #F0DFAF; font-weight: bold;">condp</span> = op
+                           '-&gt; <span style="color: #E0CF9F;">(</span><span style="color: #F0DFAF; font-weight: bold;">or</span> <span style="color: #8FB28F;">(</span>not <span style="color: #6CA0A3;">(</span>env x<span style="color: #6CA0A3;">)</span><span style="color: #8FB28F;">)</span> <span style="color: #8FB28F;">(</span>env y<span style="color: #8FB28F;">)</span><span style="color: #E0CF9F;">)</span>
+                           '* <span style="color: #E0CF9F;">(</span><span style="color: #F0DFAF; font-weight: bold;">and</span> <span style="color: #8FB28F;">(</span>env x<span style="color: #8FB28F;">)</span> <span style="color: #8FB28F;">(</span>env y<span style="color: #8FB28F;">)</span><span style="color: #E0CF9F;">)</span>
+                           '+ <span style="color: #E0CF9F;">(</span><span style="color: #F0DFAF; font-weight: bold;">or</span> <span style="color: #8FB28F;">(</span>env x<span style="color: #8FB28F;">)</span> <span style="color: #8FB28F;">(</span>env y<span style="color: #8FB28F;">)</span><span style="color: #E0CF9F;">)</span><span style="color: #94BFF3;">)</span><span style="color: #9FC59F;">)</span><span style="color: #93E0E3;">)</span><span style="color: #D0BF8F;">)</span><span style="color: #BFEBBF;">)</span><span style="color: #DCDCCC;">)</span>
 </pre>
 </div>
 
@@ -521,12 +521,12 @@ using peirce's law as an example.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-clojure">(check '(((p -&gt; q) -&gt; p) -&gt; p) {})
+<pre class="src src-clojure"><span style="color: #DCDCCC;">(</span>check '<span style="color: #BFEBBF;">(</span><span style="color: #D0BF8F;">(</span><span style="color: #93E0E3;">(</span>p -&gt; q<span style="color: #93E0E3;">)</span> -&gt; p<span style="color: #D0BF8F;">)</span> -&gt; p<span style="color: #BFEBBF;">)</span> <span style="color: #BFEBBF;">{}</span><span style="color: #DCDCCC;">)</span>
 =&gt;
-({p <span style="color: #008b8b;">true</span>,  q <span style="color: #008b8b;">true</span>,  (p -&gt; q) <span style="color: #008b8b;">true</span>,  ((p -&gt; q) -&gt; p) <span style="color: #008b8b;">true</span>,  (((p -&gt; q) -&gt; p) -&gt; p) <span style="color: #008b8b;">true</span>}
- {p <span style="color: #008b8b;">true</span>,  q <span style="color: #008b8b;">false</span>, (p -&gt; q) <span style="color: #008b8b;">false</span>, ((p -&gt; q) -&gt; p) <span style="color: #008b8b;">true</span>,  (((p -&gt; q) -&gt; p) -&gt; p) <span style="color: #008b8b;">true</span>}
- {p <span style="color: #008b8b;">false</span>, q <span style="color: #008b8b;">true</span>,  (p -&gt; q) <span style="color: #008b8b;">true</span>,  ((p -&gt; q) -&gt; p) <span style="color: #008b8b;">false</span>, (((p -&gt; q) -&gt; p) -&gt; p) <span style="color: #008b8b;">true</span>}
- {p <span style="color: #008b8b;">false</span>, q <span style="color: #008b8b;">false</span>, (p -&gt; q) <span style="color: #008b8b;">true</span>,  ((p -&gt; q) -&gt; p) <span style="color: #008b8b;">false</span>, (((p -&gt; q) -&gt; p) -&gt; p) <span style="color: #008b8b;">true</span>})
+<span style="color: #DCDCCC;">(</span><span style="color: #BFEBBF;">{</span>p <span style="color: #BFEBBF;">true</span>,  q <span style="color: #BFEBBF;">true</span>,  <span style="color: #D0BF8F;">(</span>p -&gt; q<span style="color: #D0BF8F;">)</span> <span style="color: #BFEBBF;">true</span>,  <span style="color: #D0BF8F;">(</span><span style="color: #93E0E3;">(</span>p -&gt; q<span style="color: #93E0E3;">)</span> -&gt; p<span style="color: #D0BF8F;">)</span> <span style="color: #BFEBBF;">true</span>,  <span style="color: #D0BF8F;">(</span><span style="color: #93E0E3;">(</span><span style="color: #9FC59F;">(</span>p -&gt; q<span style="color: #9FC59F;">)</span> -&gt; p<span style="color: #93E0E3;">)</span> -&gt; p<span style="color: #D0BF8F;">)</span> <span style="color: #BFEBBF;">true</span><span style="color: #BFEBBF;">}</span>
+ <span style="color: #BFEBBF;">{</span>p <span style="color: #BFEBBF;">true</span>,  q <span style="color: #BFEBBF;">false</span>, <span style="color: #D0BF8F;">(</span>p -&gt; q<span style="color: #D0BF8F;">)</span> <span style="color: #BFEBBF;">false</span>, <span style="color: #D0BF8F;">(</span><span style="color: #93E0E3;">(</span>p -&gt; q<span style="color: #93E0E3;">)</span> -&gt; p<span style="color: #D0BF8F;">)</span> <span style="color: #BFEBBF;">true</span>,  <span style="color: #D0BF8F;">(</span><span style="color: #93E0E3;">(</span><span style="color: #9FC59F;">(</span>p -&gt; q<span style="color: #9FC59F;">)</span> -&gt; p<span style="color: #93E0E3;">)</span> -&gt; p<span style="color: #D0BF8F;">)</span> <span style="color: #BFEBBF;">true</span><span style="color: #BFEBBF;">}</span>
+ <span style="color: #BFEBBF;">{</span>p <span style="color: #BFEBBF;">false</span>, q <span style="color: #BFEBBF;">true</span>,  <span style="color: #D0BF8F;">(</span>p -&gt; q<span style="color: #D0BF8F;">)</span> <span style="color: #BFEBBF;">true</span>,  <span style="color: #D0BF8F;">(</span><span style="color: #93E0E3;">(</span>p -&gt; q<span style="color: #93E0E3;">)</span> -&gt; p<span style="color: #D0BF8F;">)</span> <span style="color: #BFEBBF;">false</span>, <span style="color: #D0BF8F;">(</span><span style="color: #93E0E3;">(</span><span style="color: #9FC59F;">(</span>p -&gt; q<span style="color: #9FC59F;">)</span> -&gt; p<span style="color: #93E0E3;">)</span> -&gt; p<span style="color: #D0BF8F;">)</span> <span style="color: #BFEBBF;">true</span><span style="color: #BFEBBF;">}</span>
+ <span style="color: #BFEBBF;">{</span>p <span style="color: #BFEBBF;">false</span>, q <span style="color: #BFEBBF;">false</span>, <span style="color: #D0BF8F;">(</span>p -&gt; q<span style="color: #D0BF8F;">)</span> <span style="color: #BFEBBF;">true</span>,  <span style="color: #D0BF8F;">(</span><span style="color: #93E0E3;">(</span>p -&gt; q<span style="color: #93E0E3;">)</span> -&gt; p<span style="color: #D0BF8F;">)</span> <span style="color: #BFEBBF;">false</span>, <span style="color: #D0BF8F;">(</span><span style="color: #93E0E3;">(</span><span style="color: #9FC59F;">(</span>p -&gt; q<span style="color: #9FC59F;">)</span> -&gt; p<span style="color: #93E0E3;">)</span> -&gt; p<span style="color: #D0BF8F;">)</span> <span style="color: #BFEBBF;">true</span><span style="color: #BFEBBF;">}</span><span style="color: #DCDCCC;">)</span>
 </pre>
 </div>
 
@@ -540,19 +540,19 @@ but it works fine in most cases.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-clojure">(<span style="color: #a020f0;">defn</span> <span style="color: #0000ff;">lift</span> [x] (<span style="color: #a020f0;">fn</span> [f] (f x)))
+<pre class="src src-clojure"><span style="color: #DCDCCC;">(</span><span style="color: #F0DFAF; font-weight: bold;">defn</span> <span style="color: #93E0E3;">lift</span> <span style="color: #BFEBBF;">[</span>x<span style="color: #BFEBBF;">]</span> <span style="color: #BFEBBF;">(</span><span style="color: #F0DFAF; font-weight: bold;">fn</span> <span style="color: #D0BF8F;">[</span>f<span style="color: #D0BF8F;">]</span> <span style="color: #D0BF8F;">(</span>f x<span style="color: #D0BF8F;">)</span><span style="color: #BFEBBF;">)</span><span style="color: #DCDCCC;">)</span>
 
-(<span style="color: #a020f0;">defn</span> <span style="color: #0000ff;">valid?</span> [expr claim facts]
-  (<span style="color: #a020f0;">as-&gt;</span> facts $
-    (zipmap $ (repeat <span style="color: #008b8b;">true</span>))
-    (assoc $ 0 <span style="color: #008b8b;">false</span> 1 <span style="color: #008b8b;">true</span>)
-    (check expr $)
-    (filter (lift expr) $)
-    (mapcat (partial check claim) $)
-    (some-&gt;&gt; $ seq (every? (lift claim)))))
+<span style="color: #DCDCCC;">(</span><span style="color: #F0DFAF; font-weight: bold;">defn</span> <span style="color: #93E0E3;">valid?</span> <span style="color: #BFEBBF;">[</span>expr claim facts<span style="color: #BFEBBF;">]</span>
+  <span style="color: #BFEBBF;">(</span><span style="color: #F0DFAF; font-weight: bold;">as-&gt;</span> facts $
+    <span style="color: #D0BF8F;">(</span>zipmap $ <span style="color: #93E0E3;">(</span>repeat <span style="color: #BFEBBF;">true</span><span style="color: #93E0E3;">)</span><span style="color: #D0BF8F;">)</span>
+    <span style="color: #D0BF8F;">(</span>assoc $ 0 <span style="color: #BFEBBF;">false</span> 1 <span style="color: #BFEBBF;">true</span><span style="color: #D0BF8F;">)</span>
+    <span style="color: #D0BF8F;">(</span>check expr $<span style="color: #D0BF8F;">)</span>
+    <span style="color: #D0BF8F;">(</span>filter <span style="color: #93E0E3;">(</span>lift expr<span style="color: #93E0E3;">)</span> $<span style="color: #D0BF8F;">)</span>
+    <span style="color: #D0BF8F;">(</span>mapcat <span style="color: #93E0E3;">(</span>partial check claim<span style="color: #93E0E3;">)</span> $<span style="color: #D0BF8F;">)</span>
+    <span style="color: #D0BF8F;">(</span>some-&gt;&gt; $ seq <span style="color: #93E0E3;">(</span>every? <span style="color: #9FC59F;">(</span>lift claim<span style="color: #9FC59F;">)</span><span style="color: #93E0E3;">)</span><span style="color: #D0BF8F;">)</span><span style="color: #BFEBBF;">)</span><span style="color: #DCDCCC;">)</span>
 
-(<span style="color: #a020f0;">defmacro</span> <span style="color: #0000ff;">valid!</span> [expr claim facts]
-  `(valid? '~expr '~claim '~facts))
+<span style="color: #DCDCCC;">(</span><span style="color: #F0DFAF; font-weight: bold;">defmacro</span> <span style="color: #93E0E3;">valid!</span> <span style="color: #BFEBBF;">[</span>expr claim facts<span style="color: #BFEBBF;">]</span>
+  `<span style="color: #BFEBBF;">(</span>valid? '~expr '~claim '~facts<span style="color: #BFEBBF;">)</span><span style="color: #DCDCCC;">)</span>
 </pre>
 </div>
 
@@ -564,20 +564,20 @@ in an argumentation graph, the central claim is the root node, and the facts are
 </div>
 </div>
 
-<div id="outline-container-org9166638" class="outline-3">
-<h3 id="org9166638"><span class="section-number-3">3.2</span> examples</h3>
+<div id="outline-container-org07258f4" class="outline-3">
+<h3 id="org07258f4"><span class="section-number-3">3.2</span> examples</h3>
 <div class="outline-text-3" id="text-3-2">
 </div>
-<div id="outline-container-orgbec2074" class="outline-4">
-<h4 id="orgbec2074"><span class="section-number-4">3.2.1</span> support</h4>
+<div id="outline-container-org2221748" class="outline-4">
+<h4 id="org2221748"><span class="section-number-4">3.2.1</span> support</h4>
 <div class="outline-text-4" id="text-3-2-1">
 <p>
 "\(p\) supports \(q\)."
 </p>
 
 <div class="org-src-container">
-<pre class="src src-clojure">(valid! (p &gt; q) q [p])
-=&gt; <span style="color: #008b8b;">true</span>
+<pre class="src src-clojure"><span style="color: #DCDCCC;">(</span>valid! <span style="color: #BFEBBF;">(</span>p &gt; q<span style="color: #BFEBBF;">)</span> q <span style="color: #BFEBBF;">[</span>p<span style="color: #BFEBBF;">]</span><span style="color: #DCDCCC;">)</span>
+=&gt; <span style="color: #BFEBBF;">true</span>
 </pre>
 </div>
 
@@ -587,16 +587,16 @@ the claim \(q\) is valid when \(p\) is taken as fact,
 </div>
 </div>
 
-<div id="outline-container-orgb052222" class="outline-4">
-<h4 id="orgb052222"><span class="section-number-4">3.2.2</span> serial support</h4>
+<div id="outline-container-org6e7a6d6" class="outline-4">
+<h4 id="org6e7a6d6"><span class="section-number-4">3.2.2</span> serial support</h4>
 <div class="outline-text-4" id="text-3-2-2">
 <p>
 "\(p\) supports \(q\), and \(q\) supports \(r\)."
 </p>
 
 <div class="org-src-container">
-<pre class="src src-clojure">(valid! ((p -&gt; q) * (q -&gt; r)) r [p])
-=&gt; <span style="color: #008b8b;">true</span>
+<pre class="src src-clojure"><span style="color: #DCDCCC;">(</span>valid! <span style="color: #BFEBBF;">(</span><span style="color: #D0BF8F;">(</span>p -&gt; q<span style="color: #D0BF8F;">)</span> * <span style="color: #D0BF8F;">(</span>q -&gt; r<span style="color: #D0BF8F;">)</span><span style="color: #BFEBBF;">)</span> r <span style="color: #BFEBBF;">[</span>p<span style="color: #BFEBBF;">]</span><span style="color: #DCDCCC;">)</span>
+=&gt; <span style="color: #BFEBBF;">true</span>
 </pre>
 </div>
 
@@ -606,19 +606,19 @@ only \(p\) is the leaf node for the claim \(r\).
 </div>
 </div>
 
-<div id="outline-container-orga625f78" class="outline-4">
-<h4 id="orga625f78"><span class="section-number-4">3.2.3</span> linked support</h4>
+<div id="outline-container-orgc0be8f0" class="outline-4">
+<h4 id="orgc0be8f0"><span class="section-number-4">3.2.3</span> linked support</h4>
 <div class="outline-text-4" id="text-3-2-3">
 <p>
 "\(p\) and \(q\) together supports \(r\)."
 </p>
 
 <div class="org-src-container">
-<pre class="src src-clojure">(valid! ((p * q) -&gt; r) r [p])
-=&gt; <span style="color: #008b8b;">false</span>
+<pre class="src src-clojure"><span style="color: #DCDCCC;">(</span>valid! <span style="color: #BFEBBF;">(</span><span style="color: #D0BF8F;">(</span>p * q<span style="color: #D0BF8F;">)</span> -&gt; r<span style="color: #BFEBBF;">)</span> r <span style="color: #BFEBBF;">[</span>p<span style="color: #BFEBBF;">]</span><span style="color: #DCDCCC;">)</span>
+=&gt; <span style="color: #BFEBBF;">false</span>
 
-(valid! ((p * q) -&gt; r) r [p q])
-=&gt; <span style="color: #008b8b;">true</span>
+<span style="color: #DCDCCC;">(</span>valid! <span style="color: #BFEBBF;">(</span><span style="color: #D0BF8F;">(</span>p * q<span style="color: #D0BF8F;">)</span> -&gt; r<span style="color: #BFEBBF;">)</span> r <span style="color: #BFEBBF;">[</span>p q<span style="color: #BFEBBF;">]</span><span style="color: #DCDCCC;">)</span>
+=&gt; <span style="color: #BFEBBF;">true</span>
 </pre>
 </div>
 
@@ -629,22 +629,22 @@ for the claim \(r\) to hold.
 </div>
 </div>
 
-<div id="outline-container-org7e34358" class="outline-4">
-<h4 id="org7e34358"><span class="section-number-4">3.2.4</span> multiple support</h4>
+<div id="outline-container-orgc7edd27" class="outline-4">
+<h4 id="orgc7edd27"><span class="section-number-4">3.2.4</span> multiple support</h4>
 <div class="outline-text-4" id="text-3-2-4">
 <p>
 "both \(p\) and \(q\) supports \(r\)."
 </p>
 
 <div class="org-src-container">
-<pre class="src src-clojure">(valid! ((p + q) -&gt; r) r [p q])
-=&gt; <span style="color: #008b8b;">true</span>
+<pre class="src src-clojure"><span style="color: #DCDCCC;">(</span>valid! <span style="color: #BFEBBF;">(</span><span style="color: #D0BF8F;">(</span>p + q<span style="color: #D0BF8F;">)</span> -&gt; r<span style="color: #BFEBBF;">)</span> r <span style="color: #BFEBBF;">[</span>p q<span style="color: #BFEBBF;">]</span><span style="color: #DCDCCC;">)</span>
+=&gt; <span style="color: #BFEBBF;">true</span>
 
-(valid! ((p + q) -&gt; r) r [p])
-=&gt; <span style="color: #008b8b;">true</span>
+<span style="color: #DCDCCC;">(</span>valid! <span style="color: #BFEBBF;">(</span><span style="color: #D0BF8F;">(</span>p + q<span style="color: #D0BF8F;">)</span> -&gt; r<span style="color: #BFEBBF;">)</span> r <span style="color: #BFEBBF;">[</span>p<span style="color: #BFEBBF;">]</span><span style="color: #DCDCCC;">)</span>
+=&gt; <span style="color: #BFEBBF;">true</span>
 
-(valid! ((p + q) -&gt; r) r [q])
-=&gt; <span style="color: #008b8b;">true</span>
+<span style="color: #DCDCCC;">(</span>valid! <span style="color: #BFEBBF;">(</span><span style="color: #D0BF8F;">(</span>p + q<span style="color: #D0BF8F;">)</span> -&gt; r<span style="color: #BFEBBF;">)</span> r <span style="color: #BFEBBF;">[</span>q<span style="color: #BFEBBF;">]</span><span style="color: #DCDCCC;">)</span>
+=&gt; <span style="color: #BFEBBF;">true</span>
 </pre>
 </div>
 
@@ -654,16 +654,16 @@ then either \(p\) or \(q\) is sufficient.
 </div>
 </div>
 
-<div id="outline-container-orged2e335" class="outline-4">
-<h4 id="orged2e335"><span class="section-number-4">3.2.5</span> counter</h4>
+<div id="outline-container-org7505f8c" class="outline-4">
+<h4 id="org7505f8c"><span class="section-number-4">3.2.5</span> counter</h4>
 <div class="outline-text-4" id="text-3-2-5">
 <p>
 "\(q\) is bad, since \(r\)."
 </p>
 
 <div class="org-src-container">
-<pre class="src src-clojure">(valid! (r -&gt; (q -&gt; 0)) q [r])
-=&gt; <span style="color: #008b8b;">false</span>
+<pre class="src src-clojure"><span style="color: #DCDCCC;">(</span>valid! <span style="color: #BFEBBF;">(</span>r -&gt; <span style="color: #D0BF8F;">(</span>q -&gt; 0<span style="color: #D0BF8F;">)</span><span style="color: #BFEBBF;">)</span> q <span style="color: #BFEBBF;">[</span>r<span style="color: #BFEBBF;">]</span><span style="color: #DCDCCC;">)</span>
+=&gt; <span style="color: #BFEBBF;">false</span>
 </pre>
 </div>
 
@@ -673,16 +673,16 @@ there is nothing to support the claim \(q\).
 </div>
 </div>
 
-<div id="outline-container-orgbfa8fa6" class="outline-4">
-<h4 id="orgbfa8fa6"><span class="section-number-4">3.2.6</span> undercut</h4>
+<div id="outline-container-org3dd901c" class="outline-4">
+<h4 id="org3dd901c"><span class="section-number-4">3.2.6</span> undercut</h4>
 <div class="outline-text-4" id="text-3-2-6">
 <p>
 "\(p\) does not support \(q\), since \(r\)."
 </p>
 
 <div class="org-src-container">
-<pre class="src src-clojure">(valid! (r -&gt; ((p -&gt; q) -&gt; 0)) q [r p])
-=&gt; <span style="color: #008b8b;">false</span>
+<pre class="src src-clojure"><span style="color: #DCDCCC;">(</span>valid! <span style="color: #BFEBBF;">(</span>r -&gt; <span style="color: #D0BF8F;">(</span><span style="color: #93E0E3;">(</span>p -&gt; q<span style="color: #93E0E3;">)</span> -&gt; 0<span style="color: #D0BF8F;">)</span><span style="color: #BFEBBF;">)</span> q <span style="color: #BFEBBF;">[</span>r p<span style="color: #BFEBBF;">]</span><span style="color: #DCDCCC;">)</span>
+=&gt; <span style="color: #BFEBBF;">false</span>
 </pre>
 </div>
 
@@ -692,16 +692,16 @@ same as above.
 </div>
 </div>
 
-<div id="outline-container-org09bfe2b" class="outline-4">
-<h4 id="org09bfe2b"><span class="section-number-4">3.2.7</span> support and counter</h4>
+<div id="outline-container-orgbf2103f" class="outline-4">
+<h4 id="orgbf2103f"><span class="section-number-4">3.2.7</span> support and counter</h4>
 <div class="outline-text-4" id="text-3-2-7">
 <p>
 "\(q\) is good because \(p\), and it is bad because \(r\), therefore \(q\)."
 </p>
 
 <div class="org-src-container">
-<pre class="src src-clojure">(valid! ((p -&gt; q) * (r -&gt; (q -&gt; 0))) q [p r])
-=&gt; <span style="color: #008b8b;">nil</span>
+<pre class="src src-clojure"><span style="color: #DCDCCC;">(</span>valid! <span style="color: #BFEBBF;">(</span><span style="color: #D0BF8F;">(</span>p -&gt; q<span style="color: #D0BF8F;">)</span> * <span style="color: #D0BF8F;">(</span>r -&gt; <span style="color: #93E0E3;">(</span>q -&gt; 0<span style="color: #93E0E3;">)</span><span style="color: #D0BF8F;">)</span><span style="color: #BFEBBF;">)</span> q <span style="color: #BFEBBF;">[</span>p r<span style="color: #BFEBBF;">]</span><span style="color: #DCDCCC;">)</span>
+=&gt; <span style="color: #BFEBBF;">nil</span>
 </pre>
 </div>
 
@@ -715,16 +715,16 @@ instead of <code>true</code> or <code>false</code> when there is no situation wh
 </div>
 </div>
 
-<div id="outline-container-org143b8b7" class="outline-4">
-<h4 id="org143b8b7"><span class="section-number-4">3.2.8</span> rebut rebutter</h4>
+<div id="outline-container-orga72e4ea" class="outline-4">
+<h4 id="orga72e4ea"><span class="section-number-4">3.2.8</span> rebut rebutter</h4>
 <div class="outline-text-4" id="text-3-2-8">
 <p>
 "\(q\) would be bad if \(r\), but \(r\) is wrong because \(s\)."
 </p>
 
 <div class="org-src-container">
-<pre class="src src-clojure">(valid! ((r -&gt; (q -&gt; 0)) * (s -&gt; (r -&gt; 0))) q [s])
-=&gt; <span style="color: #008b8b;">false</span>
+<pre class="src src-clojure"><span style="color: #DCDCCC;">(</span>valid! <span style="color: #BFEBBF;">(</span><span style="color: #D0BF8F;">(</span>r -&gt; <span style="color: #93E0E3;">(</span>q -&gt; 0<span style="color: #93E0E3;">)</span><span style="color: #D0BF8F;">)</span> * <span style="color: #D0BF8F;">(</span>s -&gt; <span style="color: #93E0E3;">(</span>r -&gt; 0<span style="color: #93E0E3;">)</span><span style="color: #D0BF8F;">)</span><span style="color: #BFEBBF;">)</span> q <span style="color: #BFEBBF;">[</span>s<span style="color: #BFEBBF;">]</span><span style="color: #DCDCCC;">)</span>
+=&gt; <span style="color: #BFEBBF;">false</span>
 </pre>
 </div>
 
@@ -734,8 +734,8 @@ the attacker got attacked but there is still nothing to support the claim.
 </div>
 </div>
 
-<div id="outline-container-orgead9929" class="outline-4">
-<h4 id="orgead9929"><span class="section-number-4">3.2.9</span> support and rebut rebutter</h4>
+<div id="outline-container-org1fad07b" class="outline-4">
+<h4 id="org1fad07b"><span class="section-number-4">3.2.9</span> support and rebut rebutter</h4>
 <div class="outline-text-4" id="text-3-2-9">
 <p>
 "\(q\) is good because \(p\).
@@ -743,8 +743,8 @@ it would be bad if \(r\), but \(r\) is wrong because \(s\)."
 </p>
 
 <div class="org-src-container">
-<pre class="src src-clojure">(valid! ((p -&gt; q) * ((r -&gt; (q -&gt; 0)) * (s -&gt; (r -&gt; 0)))) q [p s])
-=&gt; <span style="color: #008b8b;">true</span>
+<pre class="src src-clojure"><span style="color: #DCDCCC;">(</span>valid! <span style="color: #BFEBBF;">(</span><span style="color: #D0BF8F;">(</span>p -&gt; q<span style="color: #D0BF8F;">)</span> * <span style="color: #D0BF8F;">(</span><span style="color: #93E0E3;">(</span>r -&gt; <span style="color: #9FC59F;">(</span>q -&gt; 0<span style="color: #9FC59F;">)</span><span style="color: #93E0E3;">)</span> * <span style="color: #93E0E3;">(</span>s -&gt; <span style="color: #9FC59F;">(</span>r -&gt; 0<span style="color: #9FC59F;">)</span><span style="color: #93E0E3;">)</span><span style="color: #D0BF8F;">)</span><span style="color: #BFEBBF;">)</span> q <span style="color: #BFEBBF;">[</span>p s<span style="color: #BFEBBF;">]</span><span style="color: #DCDCCC;">)</span>
+=&gt; <span style="color: #BFEBBF;">true</span>
 </pre>
 </div>
 
@@ -754,8 +754,8 @@ when we add the support \(p\), the claim \(q\) becomes valid.
 </div>
 </div>
 
-<div id="outline-container-org44d8cff" class="outline-4">
-<h4 id="org44d8cff"><span class="section-number-4">3.2.10</span> support and undercut rebutter</h4>
+<div id="outline-container-orgbba91cb" class="outline-4">
+<h4 id="orgbba91cb"><span class="section-number-4">3.2.10</span> support and undercut rebutter</h4>
 <div class="outline-text-4" id="text-3-2-10">
 <p>
 "\(q\) is good because \(p\).
@@ -763,8 +763,8 @@ some say it is bad because \(r\), but not necessarily because \(s\)."
 </p>
 
 <div class="org-src-container">
-<pre class="src src-clojure">(valid! ((p -&gt; q) * (s -&gt; ((r -&gt; (q -&gt; 0)) -&gt; 0))) q [p r s])
-=&gt; <span style="color: #008b8b;">true</span>
+<pre class="src src-clojure"><span style="color: #DCDCCC;">(</span>valid! <span style="color: #BFEBBF;">(</span><span style="color: #D0BF8F;">(</span>p -&gt; q<span style="color: #D0BF8F;">)</span> * <span style="color: #D0BF8F;">(</span>s -&gt; <span style="color: #93E0E3;">(</span><span style="color: #9FC59F;">(</span>r -&gt; <span style="color: #94BFF3;">(</span>q -&gt; 0<span style="color: #94BFF3;">)</span><span style="color: #9FC59F;">)</span> -&gt; 0<span style="color: #93E0E3;">)</span><span style="color: #D0BF8F;">)</span><span style="color: #BFEBBF;">)</span> q <span style="color: #BFEBBF;">[</span>p r s<span style="color: #BFEBBF;">]</span><span style="color: #DCDCCC;">)</span>
+=&gt; <span style="color: #BFEBBF;">true</span>
 </pre>
 </div>
 
@@ -774,16 +774,16 @@ same as above.
 </div>
 </div>
 
-<div id="outline-container-orge5ae194" class="outline-4">
-<h4 id="orge5ae194"><span class="section-number-4">3.2.11</span> undercut rebutter</h4>
+<div id="outline-container-org73c4287" class="outline-4">
+<h4 id="org73c4287"><span class="section-number-4">3.2.11</span> undercut rebutter</h4>
 <div class="outline-text-4" id="text-3-2-11">
 <p>
 "some say \(q\) is bad because \(r\), but not necessarily because \(s\)."
 </p>
 
 <div class="org-src-container">
-<pre class="src src-clojure">(valid! (s -&gt; ((r -&gt; (q -&gt; 0)) -&gt; 0)) q [r s])
-=&gt; <span style="color: #008b8b;">true</span>
+<pre class="src src-clojure"><span style="color: #DCDCCC;">(</span>valid! <span style="color: #BFEBBF;">(</span>s -&gt; <span style="color: #D0BF8F;">(</span><span style="color: #93E0E3;">(</span>r -&gt; <span style="color: #9FC59F;">(</span>q -&gt; 0<span style="color: #9FC59F;">)</span><span style="color: #93E0E3;">)</span> -&gt; 0<span style="color: #D0BF8F;">)</span><span style="color: #BFEBBF;">)</span> q <span style="color: #BFEBBF;">[</span>r s<span style="color: #BFEBBF;">]</span><span style="color: #DCDCCC;">)</span>
+=&gt; <span style="color: #BFEBBF;">true</span>
 </pre>
 </div>
 
@@ -805,19 +805,19 @@ since merely undercutting the rebutter is not supporting the claim.
 </div>
 </div>
 
-<div id="outline-container-org6eb3f7c" class="outline-4">
-<h4 id="org6eb3f7c"><span class="section-number-4">3.2.12</span> higher-order support</h4>
+<div id="outline-container-orgd366f5b" class="outline-4">
+<h4 id="orgd366f5b"><span class="section-number-4">3.2.12</span> higher-order support</h4>
 <div class="outline-text-4" id="text-3-2-12">
 <p>
 "the argument that \(p\) supports \(q\), supports \(r\)."
 </p>
 
 <div class="org-src-container">
-<pre class="src src-clojure">(valid! ((p -&gt; q) -&gt; r) r [p])
-=&gt; <span style="color: #008b8b;">false</span>
+<pre class="src src-clojure"><span style="color: #DCDCCC;">(</span>valid! <span style="color: #BFEBBF;">(</span><span style="color: #D0BF8F;">(</span>p -&gt; q<span style="color: #D0BF8F;">)</span> -&gt; r<span style="color: #BFEBBF;">)</span> r <span style="color: #BFEBBF;">[</span>p<span style="color: #BFEBBF;">]</span><span style="color: #DCDCCC;">)</span>
+=&gt; <span style="color: #BFEBBF;">false</span>
 
-(valid! ((p -&gt; q) -&gt; r) r [(p -&gt; q)])
-=&gt; <span style="color: #008b8b;">true</span>
+<span style="color: #DCDCCC;">(</span>valid! <span style="color: #BFEBBF;">(</span><span style="color: #D0BF8F;">(</span>p -&gt; q<span style="color: #D0BF8F;">)</span> -&gt; r<span style="color: #BFEBBF;">)</span> r <span style="color: #BFEBBF;">[</span><span style="color: #D0BF8F;">(</span>p -&gt; q<span style="color: #D0BF8F;">)</span><span style="color: #BFEBBF;">]</span><span style="color: #DCDCCC;">)</span>
+=&gt; <span style="color: #BFEBBF;">true</span>
 </pre>
 </div>
 
@@ -828,8 +828,8 @@ we need the exponential object \(p \to q\) as the leaf node.
 </div>
 </div>
 
-<div id="outline-container-org40532f1" class="outline-4">
-<h4 id="org40532f1"><span class="section-number-4">3.2.13</span> conjunctive support</h4>
+<div id="outline-container-orgc1789d2" class="outline-4">
+<h4 id="orgc1789d2"><span class="section-number-4">3.2.13</span> conjunctive support</h4>
 <div class="outline-text-4" id="text-3-2-13">
 <p>
 "\(p\) supports \(r\) and \(s\),
@@ -837,8 +837,8 @@ and both \(r\) and \(s\) supports \(q\)."
 </p>
 
 <div class="org-src-container">
-<pre class="src src-clojure">(valid! ((p -&gt; (r * s)) * ((r * s) -&gt; q)) q [p])
-=&gt; <span style="color: #008b8b;">true</span>
+<pre class="src src-clojure"><span style="color: #DCDCCC;">(</span>valid! <span style="color: #BFEBBF;">(</span><span style="color: #D0BF8F;">(</span>p -&gt; <span style="color: #93E0E3;">(</span>r * s<span style="color: #93E0E3;">)</span><span style="color: #D0BF8F;">)</span> * <span style="color: #D0BF8F;">(</span><span style="color: #93E0E3;">(</span>r * s<span style="color: #93E0E3;">)</span> -&gt; q<span style="color: #D0BF8F;">)</span><span style="color: #BFEBBF;">)</span> q <span style="color: #BFEBBF;">[</span>p<span style="color: #BFEBBF;">]</span><span style="color: #DCDCCC;">)</span>
+=&gt; <span style="color: #BFEBBF;">true</span>
 </pre>
 </div>
 
@@ -849,8 +849,8 @@ we could however make copies of the leaf node \(p\) to maintain the tree structu
 </div>
 </div>
 
-<div id="outline-container-org43c2fed" class="outline-4">
-<h4 id="org43c2fed"><span class="section-number-4">3.2.14</span> disjunctive support</h4>
+<div id="outline-container-org540bc0a" class="outline-4">
+<h4 id="org540bc0a"><span class="section-number-4">3.2.14</span> disjunctive support</h4>
 <div class="outline-text-4" id="text-3-2-14">
 <p>
 "\(p\) suggests either \(r\) or \(s\),
@@ -858,8 +858,8 @@ but in whichever case, \(q\)."
 </p>
 
 <div class="org-src-container">
-<pre class="src src-clojure">(valid! ((p -&gt; (r + s)) * ((r + s) -&gt; q)) q [p])
-=&gt; <span style="color: #008b8b;">true</span>
+<pre class="src src-clojure"><span style="color: #DCDCCC;">(</span>valid! <span style="color: #BFEBBF;">(</span><span style="color: #D0BF8F;">(</span>p -&gt; <span style="color: #93E0E3;">(</span>r + s<span style="color: #93E0E3;">)</span><span style="color: #D0BF8F;">)</span> * <span style="color: #D0BF8F;">(</span><span style="color: #93E0E3;">(</span>r + s<span style="color: #93E0E3;">)</span> -&gt; q<span style="color: #D0BF8F;">)</span><span style="color: #BFEBBF;">)</span> q <span style="color: #BFEBBF;">[</span>p<span style="color: #BFEBBF;">]</span><span style="color: #DCDCCC;">)</span>
+=&gt; <span style="color: #BFEBBF;">true</span>
 </pre>
 </div>
 
@@ -870,8 +870,8 @@ therefore \(q\)."
 </p>
 
 <div class="org-src-container">
-<pre class="src src-clojure">(valid! ((p -&gt; (q + r)) * (r -&gt; 0)) q [p])
-=&gt; <span style="color: #008b8b;">true</span>
+<pre class="src src-clojure"><span style="color: #DCDCCC;">(</span>valid! <span style="color: #BFEBBF;">(</span><span style="color: #D0BF8F;">(</span>p -&gt; <span style="color: #93E0E3;">(</span>q + r<span style="color: #93E0E3;">)</span><span style="color: #D0BF8F;">)</span> * <span style="color: #D0BF8F;">(</span>r -&gt; 0<span style="color: #D0BF8F;">)</span><span style="color: #BFEBBF;">)</span> q <span style="color: #BFEBBF;">[</span>p<span style="color: #BFEBBF;">]</span><span style="color: #DCDCCC;">)</span>
+=&gt; <span style="color: #BFEBBF;">true</span>
 </pre>
 </div>
 
@@ -881,16 +881,16 @@ in the disjunctive case, the graph structure is difficult to eliminate.
 </div>
 </div>
 
-<div id="outline-container-org4e50081" class="outline-4">
-<h4 id="org4e50081"><span class="section-number-4">3.2.15</span> higher-order claim</h4>
+<div id="outline-container-org2040816" class="outline-4">
+<h4 id="org2040816"><span class="section-number-4">3.2.15</span> higher-order claim</h4>
 <div class="outline-text-4" id="text-3-2-15">
 <p>
 "\(q\) is reason for \(p\) because \(p\) makes \(q\) and we need \(q\)."
 </p>
 
 <div class="org-src-container">
-<pre class="src src-clojure">(valid! (p -&gt; q) (q -&gt; p) [p])
-=&gt; <span style="color: #008b8b;">true</span>
+<pre class="src src-clojure"><span style="color: #DCDCCC;">(</span>valid! <span style="color: #BFEBBF;">(</span>p -&gt; q<span style="color: #BFEBBF;">)</span> <span style="color: #BFEBBF;">(</span>q -&gt; p<span style="color: #BFEBBF;">)</span> <span style="color: #BFEBBF;">[</span>p<span style="color: #BFEBBF;">]</span><span style="color: #DCDCCC;">)</span>
+=&gt; <span style="color: #BFEBBF;">true</span>
 </pre>
 </div>
 
@@ -903,8 +903,8 @@ the claim itself is an exponential object.
 </div>
 </div>
 
-<div id="outline-container-org48bf2b7" class="outline-2">
-<h2 id="org48bf2b7"><span class="section-number-2">4</span> ramblings</h2>
+<div id="outline-container-org1d4a989" class="outline-2">
+<h2 id="org1d4a989"><span class="section-number-2">4</span> ramblings</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 we only need supporting arrows to describe argumentation structures.
@@ -923,8 +923,9 @@ although these constructions probably does not occur very often empirically.
 support is not just binary.
 if we wish to consider different types of supporting relations,
 then we have to break the preorder structure.
-instead of heyting algebras, we need heyting categories aka logoi.<sup><a id="fnr.6" class="footref" href="#fn.6">6</a></sup>
-the terminal object does interesting things there.
+instead of heyting algebras, we need bicartesian closed categories.<sup><a id="fnr.6" class="footref" href="#fn.6">6</a></sup>
+furthermore we may consider quantification of arguments,
+and work in heyting categories aka logoi and locally catesian closed categories.<sup><a id="fnr.7" class="footref" href="#fn.7">7</a></sup><sup>, </sup><sup><a id="fnr.8" class="footref" href="#fn.8">8</a></sup>
 </p>
 
 <p>
@@ -959,7 +960,15 @@ and how might they help with argumentation mining.
 </p></div></div>
 
 <div class="footdef"><sup><a id="fn.6" class="footnum" href="#fnr.6">6</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://ncatlab.org/nlab/show/bicartesian+closed+category">https://ncatlab.org/nlab/show/bicartesian+closed+category</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.7" class="footnum" href="#fnr.7">7</a></sup> <div class="footpara"><p class="footpara">
 <a href="https://ncatlab.org/nlab/show/Heyting+category">https://ncatlab.org/nlab/show/Heyting+category</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.8" class="footnum" href="#fnr.8">8</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://ncatlab.org/nlab/show/locally+cartesian+closed+category">https://ncatlab.org/nlab/show/locally+cartesian+closed+category</a>
 </p></div></div>
 
 
@@ -968,7 +977,7 @@ and how might they help with argumentation mining.
 <div id="postamble" class="status">
 <p class="date">Date: october 31, 2018</p>
 <p class="author">Author: kuan yu</p>
-<p class="date">Created: 2018-11-01 Thu 05:29</p>
+<p class="date">Created: 2019-01-04 Fri 05:12</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
